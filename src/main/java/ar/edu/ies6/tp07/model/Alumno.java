@@ -1,5 +1,10 @@
 package ar.edu.ies6.tp07.model;
 
+import java.time.LocalDate;
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class Alumno {
 /// crear los atributos
 	
@@ -8,7 +13,8 @@ private String apellido;
 private String dni;
 private String gmail;
 private String edad;
-
+private LocalDate fechaDeNacimiento;
+private Boolean estado; 
 //contructor por defecto
 public Alumno() {
 	// TODO Auto-generated constructor stub
@@ -17,13 +23,15 @@ public Alumno() {
 
 // contructor por parametro: va si osi para poder cargar alumnos
 
-public Alumno(String nombre, String apellido, String dni, String gmail, String edad) {
+public Alumno(String nombre, String apellido, String dni, String gmail, String edad, LocalDate fechaDeNacimiento, Boolean estado) {
 	super();
 	this.nombre = nombre;
 	this.apellido = apellido;
 	this.dni = dni;
 	this.gmail = gmail;
 	this.edad = edad;
+	this.fechaDeNacimiento= fechaDeNacimiento;
+	this.estado = estado;
 }
 
 //metodo Accesores
@@ -58,12 +66,41 @@ public void setEdad(String edad) {
 	this.edad = edad;
 }
 
+public LocalDate getFechaDeNacimiento() {
+	return fechaDeNacimiento;
+}
+
+public void setFechaDeNacimiento(LocalDate fechaDeNacimiento) {
+	this.fechaDeNacimiento = fechaDeNacimiento;
+}
+
+public boolean isEstado() {
+	return estado;
+}
+
+public void setEstado(Boolean estado) {
+	this.estado = estado;
+}
+
+
 ////metodo de interfaz el to String
+
 @Override
 public String toString() {
 	return "Alumno [nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", gmail=" + gmail + ", edad="
-			+ edad + "]";
+			+ edad + ", fechaDeNacimiento=" + fechaDeNacimiento + ", estado=" + estado + "]";
 }   
+
+
+
+
+
+
+
+
+
+
+
 
 
 
