@@ -1,12 +1,18 @@
 package ar.edu.ies6.tp07.model;
 
+import java.time.LocalDate;
+
+import org.springframework.stereotype.Component;
+@Component
 public class Docente {
 
 //atributos de un docente
 private String nombre;
 private String apellido;
 private String dni;
-private String legajo;
+private LocalDate FechaNacimiento;
+private Boolean estado;
+
 
 // constructor por defecto
 public Docente() {
@@ -16,12 +22,15 @@ public Docente() {
 
 
 // contructor por parametros, si o si va. porq sino no nos permite cargar un docente
-public Docente(String nombre, String apellido, String dni, String legajo) {
+public Docente(String nombre, String apellido, String dni, String legajo, LocalDate FechaNacimiento, Boolean estado) {
 	super();
 	this.nombre = nombre;
 	this.apellido = apellido;
 	this.dni = dni;
-	this.legajo = legajo;
+	this.FechaNacimiento = FechaNacimiento;
+	this.estado = estado;
+	
+	
 }
 
 
@@ -52,20 +61,44 @@ public void setDni(String dni) {
 	this.dni = dni;
 }
 
-public String getLegajo() {
-	return legajo;
+
+
+public LocalDate getFechaNacimiento() {
+	return FechaNacimiento;
 }
 
-public void setLegajo(String legajo) {
-	this.legajo = legajo;
+
+
+public void setFechaNacimiento(LocalDate fechaNacimiento) {
+	FechaNacimiento = fechaNacimiento;
 }
 
 
-//metodo de interfaz
+
+
+
+public Boolean getEstado() {
+	return estado;
+}
+
+
+
+public void setEstado(Boolean estado) {
+	this.estado = estado;
+}
+
+
+// metodo de interfaz
 @Override
 public String toString() {
-	return "Docente [nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", legajo=" + legajo + "]";
+	return "Docente [nombre=" + nombre + ", apellido=" + apellido + ", dni=" 
+			+ ", FechaNacimiento=" + FechaNacimiento + ", estado=" + estado + "]";
 }
+
+
+
+
+
 
 
 
