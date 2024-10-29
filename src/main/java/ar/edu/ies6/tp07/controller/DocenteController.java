@@ -37,7 +37,7 @@ transportador.addObject("docente", unDocente);
 return transportador;}
 
 //luego que se cargan los datos viene por post
-@PostMapping
+@PostMapping("/guardarDocente")
 public ModelAndView guardarDocente (Docente docente) {
 	//Este método devuelve un objeto ModelAndView, que combina la vista 
 	//(la página que se mostrará) y el modelo (los datos que se van a 
@@ -56,9 +56,6 @@ public ModelAndView guardarDocente (Docente docente) {
 	transportador.addObject("listadoDocentes", docenteService.listarTodosDocente()); //estamos llamando al almacen de docentes
 	return transportador;
 
-
-
-}
-
+	}
 
 }
