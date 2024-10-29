@@ -91,19 +91,4 @@ public String toString() {
 			+ edad + ", fechaDeNacimiento=" + fechaDeNacimiento + ", estado=" + estado + "]";
 }   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
 }
