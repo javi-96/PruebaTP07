@@ -2,7 +2,11 @@ package ar.edu.ies6.tp07.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import ar.edu.ies6.tp07.model.Materia;
+
+@Service
 
 public interface IMateriaService {
 
