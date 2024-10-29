@@ -1,5 +1,8 @@
 package ar.edu.ies6.tp07.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Materia {
 	
 	//Atributos
@@ -7,6 +10,8 @@ public class Materia {
 	private String nombre;
 	private Boolean estado;
 	private Integer cargaHoraria;
+	private String año;
+	
 	
 	//Contructor 
 	public Materia() {
@@ -15,12 +20,14 @@ public class Materia {
 	
 	
 
-	public Materia(String codigo, String nombre, Boolean estado, Integer cargaHoraria) {
+	public Materia(String codigo, String nombre, Boolean estado, Integer cargaHoraria, String año) {
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.estado = estado;
 		this.cargaHoraria = cargaHoraria;
+		this.año = año;
+			
 	}
 
 
@@ -59,12 +66,25 @@ public class Materia {
 		this.cargaHoraria = cargaHoraria;
 	}
 
+
+	public String getAño() {
+		return año;
+	}
+	public void setAño(String año) {
+		this.año = año;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "Materia [codigo=" + codigo + ", nombre=" + nombre + ", estado=" + estado + ", cargaHoraria="
-				+ cargaHoraria + "]";
+				+ cargaHoraria + ", año=" + año +",]";
 	}
 	
+	
+
+
+
 	
 	
 	
