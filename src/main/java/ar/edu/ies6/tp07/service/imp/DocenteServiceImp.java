@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import ar.edu.ies6.tp07.model.Docente;
 import ar.edu.ies6.tp07.service.IDocenteService;
+import ar.edu.ies6.tp07.util.AlmacenDocente;
 
 @Service
 public class DocenteServiceImp implements IDocenteService{
@@ -15,6 +16,7 @@ public class DocenteServiceImp implements IDocenteService{
 	@Override
 	public void guardarDocente(Docente docente) {
 		// TODO Auto-generated method stub
+		AlmacenDocente.docente.add(docente);
 		
 	}
 
@@ -39,9 +41,7 @@ public class DocenteServiceImp implements IDocenteService{
 	@Override
 	public List<Docente> listarTodosDocente() {
 		// TODO Auto-generated method stub
-		
-		//FALTA LLAMAR AL ALMACENDOCENTE.DOCENTE
-		return null;
+		return AlmacenDocente.docente;
 	}
 	
 	// 

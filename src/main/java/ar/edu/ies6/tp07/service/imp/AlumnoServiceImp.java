@@ -14,7 +14,7 @@ public class AlumnoServiceImp implements IAlumnoService {
 	public void guardarAlummno(Alumno alumno){
 		// TODO Auto-generated method stub
 
-	AlmacenAlumno.alumno.add(alumno);
+		AlmacenAlumno.alumno.add(alumno);
 		}
 		
 	
@@ -39,7 +39,7 @@ public class AlumnoServiceImp implements IAlumnoService {
 	@Override
 	public List<Alumno> listarTodosAlumnos() {
 		// TODO Auto-generated method stub
-		return null;
+		return AlmacenAlumno.alumno;
 	}
 
 }
