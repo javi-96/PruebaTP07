@@ -2,9 +2,13 @@ package ar.edu.ies6.tp07.service.imp;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import ar.edu.ies6.tp07.model.Materia;
 import ar.edu.ies6.tp07.service.IMateriaService;
 import ar.edu.ies6.tp07.util.AlmacenMateria;
+ 
+@Service
 
 public class MateriaServiceImp implements IMateriaService {
 
