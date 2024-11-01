@@ -23,5 +23,5 @@ public interface IDocenteService {
 	public void modificarDocente(Docente modificarDocente);
 	public void consultarDocente(String dni);
 	// esto es la logica en la que tiene que trabajar caada metodo
-	public List<Docente> listarTodosDocente();
+	public List<Docente> ListarTodosDocentes();
 }

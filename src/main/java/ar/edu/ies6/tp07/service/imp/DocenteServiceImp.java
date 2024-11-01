@@ -2,6 +2,7 @@ package ar.edu.ies6.tp07.service.imp;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import ar.edu.ies6.tp07.model.Docente;
@@ -9,6 +10,7 @@ import ar.edu.ies6.tp07.service.IDocenteService;
 import ar.edu.ies6.tp07.util.AlmacenDocente;
 
 @Service
+@Qualifier ("ServicioDocenteArrayList ")
 public class DocenteServiceImp implements IDocenteService{
 	
 	//Y AQUI COMO LO HACE
@@ -16,7 +18,8 @@ public class DocenteServiceImp implements IDocenteService{
 	@Override
 	public void guardarDocente(Docente docente) {
 		// TODO Auto-generated method stub
-		AlmacenDocente.docente.add(docente);
+		AlmacenDocente.docentes.add(docente);
+		System.out.println(AlmacenDocente.docentes.get(0).getDni());
 		
 	}
 
@@ -39,10 +42,11 @@ public class DocenteServiceImp implements IDocenteService{
 	}
 
 	@Override
-	public List<Docente> listarTodosDocente() {
+	public List<Docente> ListarTodosDocentes() {
 		// TODO Auto-generated method stub
-		return AlmacenDocente.docente;
+		return AlmacenDocente.docentes;
 	}
+
 	
 	// 
 	

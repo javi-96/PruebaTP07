@@ -3,14 +3,25 @@ package ar.edu.ies6.tp07.model;
 import java.time.LocalDate;
 
 import org.springframework.stereotype.Component;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 @Component
+@Entity
 public class Docente {
 
 //atributos de un docente
+@Column
 private String nombre;
+@Column
 private String apellido;
+@Id
 private String dni;
+@Column
 private LocalDate FechaNacimiento;
+@Column
 private Boolean estado;
 
 
@@ -22,18 +33,9 @@ public Docente() {
 
 
 // contructor por parametros, si o si va. porq sino no nos permite cargar un docente
-public Docente(String nombre, String apellido, String dni, String legajo, LocalDate FechaNacimiento, Boolean estado) {
-	super();
-	this.nombre = nombre;
-	this.apellido = apellido;
-	this.dni = dni;
-	this.FechaNacimiento = FechaNacimiento;
-	this.estado = estado;
-	
+public Docente(String nombre, String apellido, String dni, LocalDate FechaNacimiento, Boolean estado) {
 	
 }
-
-
 
 
 //metdosaccesores

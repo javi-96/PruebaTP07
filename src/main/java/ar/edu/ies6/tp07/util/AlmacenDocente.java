@@ -8,7 +8,7 @@ import ar.edu.ies6.tp07.model.Docente;
 public class AlmacenDocente {
 	
 		
-public static List<Docente> docente = new ArrayList<Docente>();
+public static List<Docente> docentes = new ArrayList<Docente>();
 
 		
 }
