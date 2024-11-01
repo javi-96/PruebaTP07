@@ -13,11 +13,6 @@ import ar.edu.ies6.tp07.util.AlmacenAlumno;
 @Qualifier("servicioAlumnoArrayList")
 
 
-public class AlumnoServiceImp implements IAlumnoService {
-	
-	
-	//AlmacenAlumno.alumno.add(alumno);
-	//System.out.println(AlmacenAlumno.alumno.get(0).getDni());
 
 		
 	
@@ -42,7 +37,7 @@ public class AlumnoServiceImp implements IAlumnoService {
 	@Override
 	public List<Alumno> listarTodosAlumnos() {
 		// TODO Auto-generated method stub
-		//filtrar por alumnos con estado activo
+
 		return AlmacenAlumno.alumno;
 	}
 
