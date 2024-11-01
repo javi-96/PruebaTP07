@@ -4,16 +4,28 @@ import java.time.LocalDate;
 
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 @Component
+@Entity
 public class Alumno {
 /// crear los atributos
 	
+	@Column
 private String nombre;
+	@Column
 private String apellido;
+	@Id
 private String dni;
+	@Column
 private String gmail;
+	@Column
 private String edad;
+	@Column
 private LocalDate fechaDeNacimiento;
+	@Column
 private Boolean estado; 
 //contructor por defecto
 public Alumno() {
