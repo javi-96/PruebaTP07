@@ -10,7 +10,7 @@ public class Materia {
 	private String nombre;
 	private Boolean estado;
 	private Integer cargaHoraria;
-	private String año;
+	private String anio;
 	
 	
 	//Contructor 
@@ -20,13 +20,13 @@ public class Materia {
 	
 	
 
-	public Materia(String codigo, String nombre, Boolean estado, Integer cargaHoraria, String año) {
+	public Materia(String codigo, String nombre, Boolean estado, Integer cargaHoraria, String año, String anio) {
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.estado = estado;
 		this.cargaHoraria = cargaHoraria;
-		this.año = año;
+		this.anio = anio;
 			
 	}
 
@@ -67,18 +67,18 @@ public class Materia {
 	}
 
 
-	public String getAño() {
-		return año;
+	public String getAnio() {
+		return anio;
 	}
-	public void setAño(String año) {
-		this.año = año;
+	public void setAnio(String anio) {
+		this.anio = anio;
 	}
 	
 	
 	@Override
 	public String toString() {
 		return "Materia [codigo=" + codigo + ", nombre=" + nombre + ", estado=" + estado + ", cargaHoraria="
-				+ cargaHoraria + ", año=" + año +",]";
+				+ cargaHoraria + ", anio=" + anio +",]";
 	}
 	
 	

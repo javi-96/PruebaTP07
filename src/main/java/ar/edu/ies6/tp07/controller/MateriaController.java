@@ -30,7 +30,7 @@ public class MateriaController {
 	}
 	
 	//lo devuelve 
-	@PostMapping("/gurdarMateria")
+	@PostMapping("/guardarMateria")
 	public ModelAndView guardarMateria (Materia materia) {
 		
 	// Guarda la materia usando el servicio
