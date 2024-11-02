@@ -1,32 +1,37 @@
 package ar.edu.ies6.tp07.service.imp;
 
 import java.util.List;
+import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import ar.edu.ies6.tp07.model.Docente;
+import ar.edu.ies6.tp07.repository.DocenteRepository;
 import ar.edu.ies6.tp07.service.IDocenteService;
-import ar.edu.ies6.tp07.util.AlmacenDocente;
-
 @Service
-@Qualifier ("ServicioDocenteArrayList ")
-public class DocenteServiceImp implements IDocenteService{
-	
-	//Y AQUI COMO LO HACE
+@Qualifier ("servicioDocenteBD")
+public class DocenteServiceImpBD implements IDocenteService {
 
+	@Autowired
+	DocenteRepository docenteRepository;
+	
 	@Override
 	public void guardarDocente(Docente docente) {
 		// TODO Auto-generated method stub
-		AlmacenDocente.docentes.add(docente);
-		System.out.println(AlmacenDocente.docentes.get(0).getDni());
-		
+		//guardar en la BD
+		//nos dic q todos los docentes igresados se guardaran como activos por defecto
+		docente.setEstado(true);
+		docenteRepository.save(docente);
 	}
 
 	@Override
 	public void eliminarDocente(String dni) {
 		// TODO Auto-generated method stub
-		
+		Optional<Docente> docenteEncontrado = docenteRepository.findById(dni);
+		docenteEncontrado.get().setEstado(false);
+		docenteRepository.save(docenteEncontrado.get());
 	}
 
 	@Override
@@ -44,25 +49,12 @@ public class DocenteServiceImp implements IDocenteService{
 	@Override
 	public List<Docente> listarTodosDocentes() {
 		// TODO Auto-generated method stub
-		return null;
+		return (List <Docente>) docenteRepository.findAll();
 	}
-
 	@Override
 	public List<Docente> listarTodosDocentesActivos() {
 		// TODO Auto-generated method stub
-		return null;
+		return (List<Docente>) docenteRepository.findByEstado(true); //muestra todo los q estan activos
 	}
 
-	
-	
-	
-	// 
-	
-	//aqui en docente service solo contiene la lógica de 
-	//negocio para manejar objetos Docente
-
-	
-	
-
-	
 }
