@@ -1,4 +1,5 @@
 package ar.edu.ies6.tp07.controller;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -9,10 +10,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.ies6.tp07.model.Docente;
 import ar.edu.ies6.tp07.service.IDocenteService;
-import ar.edu.ies6.tp07.service.imp.DocenteServiceImp;
 
 @Controller
 public class DocenteController {
+
 
 //aqui lo primero que hace es instanciar por unica vez a docente.
 	//esto es una inyeccion de dependencia
@@ -58,6 +59,7 @@ public ModelAndView guardarDocente (Docente docente) {
 @GetMapping("/eliminarDocente/{dni}") 
 public ModelAndView deleteDocente (@PathVariable(name = "dni") String dni) {
 docenteService.eliminarDocente(dni);
+
 
 //muestra el nuevo listado
 ModelAndView modelView = new ModelAndView("listaDocentes");
